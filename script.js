@@ -128,34 +128,57 @@
 
 
 
-function finishHomework(callback) {
-console.log("Starting homework ... ");
-setTimeout(() => {
-console. log("Homework done!");
-callback();
-}, 2000);
-}
+// function finishHomework(callback) {
+// console.log("Starting homework ... ");
+// setTimeout(() => {
+// console. log("Homework done!");
+// callback();
+// }, 2000);
+// }
 
-function eatDinner(callback) {
-console. log("Starting dinner ... ");
-setTimeout(() =>{
-console. log("Dinner done!");
-callback();
-}, 1500);
-}
-function goToPlayground( ) {
-console. log("Going to the playground!");
-}
-// Chained in steps, but cleaner
-finishHomework(() => {
-eatDinner(() => {
-goToPlayground( );
+// function eatDinner(callback) {
+// console. log("Starting dinner ... ");
+// setTimeout(() =>{
+// console. log("Dinner done!");
+// callback();
+// }, 1500);
+// }
+// function goToPlayground( ) {
+// console. log("Going to the playground!");
+// }
+// // Chained in steps, but cleaner
+// finishHomework(() => {
+// eatDinner(() => {
+// goToPlayground( );
 
-});
-});
+// });
+// });
 
+const input=document.querySelector("#task")
+const btn=document.querySelector(".btn")
+const lists=document.querySelector(".list")
 
+btn.addEventListener("click",(e)=>{
+    e.preventDefault()
+    if(input.value===""){
+        alert("Add the Task")
+        return
+    }
 
+    const li=document.createElement("li")
+    const deleteButton=document.createElement("button")
+
+    deleteButton.innerText="Delete"
+    li.innerText=input.value
+    
+    li.appendChild(deleteButton)
+    lists.appendChild(li)
+
+    deleteButton.addEventListener("click",()=>{
+        lists.removeChild(li)
+    })
+    input.value=""
+})
 
 
 
