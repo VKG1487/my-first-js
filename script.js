@@ -181,88 +181,118 @@
 // })
 
 
-const p = new Promise(function (resolve, reject) {
-    // resolve()
-    // reject()
-    setTimeout(() => {
-        let done = true;
-        if (done) {
-            resolve({ Name: "alex", age: 34 })
-        } else {
-            reject({ message: "network issue" })
-        }
-    }, 2000)
+// const p = new Promise(function (resolve, reject) {
+//     "resolve()"
+//     "reject()"
+//     setTimeout(() => {
+//         let done = true;
+//         if (done) {
+//             resolve({ Name: "alex", age: 34 })
+//         } else {
+//             reject({ message: "network issue" })
+//         }
+//     }, 2000)
+// })
+
+// "console.log(p)"
+
+// p.then((data) => {
+//     console.log("Resolved", data)
+// }).catch((err) => {
+//     console.log("Rejected", err)
+// }).finally(() => {
+//     console.log("Finally Block")
+// })
+
+// function doHomework() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let homeworkDone = true;
+//             if (homeworkDone) {
+//                 console.log("Homework is done");
+//                 resolve("Homework complete");
+//             } else {
+//                 reject("Homework not done");
+//             }
+//         }, 2000);
+//     });
+// }
+
+// function eatDinner() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let dinnerEaten = true;
+//             if (dinnerEaten) {
+//                 console.log(" Dinner is eaten");
+//                 resolve("Dinner complete");
+//             } else {
+//                 reject(" Didn't eat dinner");
+//             }
+//         }, 2000);
+//     });
+// }
+
+// function goToPlayground() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let permission = true;
+//             if (permission) {
+//                 console.log(" Went to the playground");
+//                 resolve("Playground time!");
+//             } else {
+//                 reject(" Not allowed to go out");
+//             }
+//         }, 2000);
+//     });
+
+// }
+
+// "Promise Chaining Starts"
+// doHomework()
+//     .then((data) => {
+//         console.log(data);
+//         return eatDinner();
+//     })
+//     .then((data) => {
+//         console.log(data);
+//         return goToPlayground();
+//     })
+//     .catch((error) => {
+//         console.log("Something went wrong:", error);
+//     })
+//     .finally(() => {
+//         console.log("Day ended - Go to sleep");
+//     });
+
+
+console.log("First line")
+setTimeout(()=>{
+    console.log("Inside Timeout")
+},0)
+
+const p =new Promise((resolve,reject)=>{
+    resolve()
 })
 
-// console.log(p)
-
-p.then((data) => {
-    console.log("Resolved", data)
-}).catch((err) => {
-    console.log("Rejected", err)
-}).finally(() => {
-    console.log("Finally Block")
+p.then(()=>{
+    console.log("Inside Promise")
+}).catch(()=>{
+    console.log("Inside Catch")
 })
 
-function doHomework() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let homeworkDone = true;
-            if (homeworkDone) {
-                console.log("Homework is done");
-                resolve("Homework complete");
-            } else {
-                reject("Homework not done");
-            }
-        }, 2000);
-    });
-}
+const p2=new Promise((resolve,reject)=>{
+    resolve()
+})
 
-function eatDinner() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let dinnerEaten = true;
-            if (dinnerEaten) {
-                console.log(" Dinner is eaten");
-                resolve("Dinner complete");
-            } else {
-                reject(" Didn't eat dinner");
-            }
-        }, 2000);
-    });
-}
+p2.then(()=>{
+    console.log("Inside Promise(P2)")
+}).catch(()=>{
+    console.log("Inside Catch(P2)")
+})
+console.log("Last Line")
 
-function goToPlayground() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let permission = true;
-            if (permission) {
-                console.log(" Went to the playground");
-                resolve("Playground time!");
-            } else {
-                reject(" Not allowed to go out");
-            }
-        }, 2000);
-    });
 
-}
 
-// Promise Chaining Starts
-doHomework()
-    .then((data) => {
-        console.log(data);
-        return eatDinner();
-    })
-    .then((data) => {
-        console.log(data);
-        return goToPlayground();
-    })
-    .catch((error) => {
-        console.log("Something went wrong:", error);
-    })
-    .finally(() => {
-        console.log("Day ended - Go to sleep");
-    });
 
 
 
