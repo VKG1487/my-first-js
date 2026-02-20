@@ -265,31 +265,62 @@
 //     });
 
 
-console.log("First line")
-setTimeout(()=>{
-    console.log("Inside Timeout")
-},0)
+// console.log("First line")
+// setTimeout(()=>{
+//     console.log("Inside Timeout")
+// },0)
 
-const p =new Promise((resolve,reject)=>{
-    resolve()
-})
+// const p =new Promise((resolve,reject)=>{
+//     resolve()
+// })
 
-p.then(()=>{
-    console.log("Inside Promise")
-}).catch(()=>{
-    console.log("Inside Catch")
-})
+// p.then(()=>{
+//     console.log("Inside Promise")
+// }).catch(()=>{
+//     console.log("Inside Catch")
+// })
 
-const p2=new Promise((resolve,reject)=>{
-    resolve()
-})
+// const p2=new Promise((resolve,reject)=>{
+//     resolve()
+// })
 
-p2.then(()=>{
-    console.log("Inside Promise(P2)")
-}).catch(()=>{
-    console.log("Inside Catch(P2)")
-})
-console.log("Last Line")
+// p2.then(()=>{
+//     console.log("Inside Promise(P2)")
+// }).catch(()=>{
+//     console.log("Inside Catch(P2)")
+// })
+// console.log("Last Line")
+
+async function sendData(){
+    try{
+        const response=await fetch("https://dummyjson.com/products/add",{
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({
+                title:"Macbook",
+                description:"Macbook Pro",
+                price:100000,
+                discountPercentage:5,
+                rating:4.5,
+                stock:5,
+                brand:"Apple",
+            })
+        })
+        const data=await response.json()
+        console.log(data)
+    }catch(error){
+        console.log("Data Not Found")
+    }
+}
+sendData()
+
+
+
+
+
+
+
+
 
 
 
