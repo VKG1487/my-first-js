@@ -347,7 +347,7 @@ document.cookie="age=17; expires=Never; 01 Aug 2008 12:00:00 UTC"
 console.log(document.cookie)
 
 
-async function sample() {
+async function sample(){
     await fetch("http://127.0.0.1:5500/index.html")
 }
 sample()
