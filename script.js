@@ -341,16 +341,60 @@
 // console.log(JSON.parse(sessionStorage.getItem("obj")))
 
 
-document.cookie="name=Snigdha; expires=Never; 01 Aug 2008 12:00:00 UTC"
-document.cookie="age=17; expires=Never; 01 Aug 2008 12:00:00 UTC"
+// document.cookie="name=Snigdha; expires=Never; 01 Aug 2008 12:00:00 UTC"
+// document.cookie="age=17; expires=Never; 01 Aug 2008 12:00:00 UTC"
 
-console.log(document.cookie)
+// console.log(document.cookie)
 
 
-async function sample(){
-    await fetch("http://127.0.0.1:5500/index.html")
+// async function sample(){
+//     await fetch("http://127.0.0.1:5500/index.html")
+// }
+// sample()
+
+// function* generate(){
+//     yield 1
+//     yield 2 
+//     yield 3
+
+//     for (let index = 1; index<4; index++)
+//         yield index
+
+//     let i = 1
+//     while(true){
+//         yield i
+//         i++
+//     }
+// }
+
+// const gen=generate()
+
+// console.log(gen)
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next())
+
+// function add(a,b,c){
+//     return a+b+c
+// }
+
+function add(a){
+    return function(b){
+        return function(c){
+            return a+b+c
+        }
+    }
 }
-sample()
+
+// console.log(add(1)(2)(3))
+
+const first=add(1)
+const second=first(2)
+const third=second(3)
+console.log(third)
+
+
+
 
 
 
