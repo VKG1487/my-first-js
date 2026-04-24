@@ -212,7 +212,7 @@
 //                 console.log("Homework is done");
 //                 resolve("Homework complete");
 //             } else {
-//                 reject("Homework not done");
+//                 reject("Homework not done"); 
 //             }
 //         }, 2000);
 //     });
@@ -392,6 +392,7 @@
 // const second=first(2)
 // const third=second(3)
 // console.log(third)
+
 
 
 
